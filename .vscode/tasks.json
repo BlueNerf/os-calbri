@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "nasm boot.asm -f bin -o boot.bin",
+            "problemMatcher": []
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "command": "qemu-system-x86_64 -drive format=raw,file=boot.bin",
+            "problemMatcher": []
+        },
+        {
+            "label": "build and run",
+            "type": "shell",
+            "command": "echo Done",
+            "problemMatcher": [],
+            "dependsOn": [
+                "build",
+                "run"
+            ],
+            "dependsOrder": "sequence",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        }
+    ]
+}

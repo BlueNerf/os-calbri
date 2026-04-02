@@ -2,7 +2,7 @@ org 0x7C00
 bits 16
 
 .main:
-mov al,  0x0e
+mov ah,  0x0e
 mov al, "|"
 int 0x10
 
@@ -17,4 +17,4 @@ dw 0x00000000
 
 
 times 510 - ($ - $$) db 0
-dw 0x55AA
+dw 0xAA55

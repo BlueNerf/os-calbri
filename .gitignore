@@ -1,0 +1,6 @@
+boot.bin
+
+.*
+*.env
+
+build/
